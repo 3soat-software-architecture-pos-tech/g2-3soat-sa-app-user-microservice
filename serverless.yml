@@ -1,0 +1,39 @@
+service: customer-service
+
+provider:
+  name: aws
+  runtime: python3.9
+  stage: ${opt:stage, "dev"}
+  region: us-east-1
+  environment: ${file(environment.yml)}
+  iam:
+    role: DefaultRole
+
+functions:
+  - ${file(functions.yml)}
+
+resources:
+  - ${file(resources.yml)}
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+  customersTableArn:
+    Fn::GetAtt:
+      - CustomersTable
+      - Arn
+
+package:
+  patterns:
+    - '!.git/**'
+    - '!.github/**'
+    - '!.ipynb_checkpoints/**'
+    - '!services/*.ipynb'
+    - '!.pytest_cache/**'
+    - '!.vscode/**'
+    - '!node_modules/**'
+    - '!package.json'
+    - '!package-lock.json'
