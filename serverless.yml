@@ -8,19 +8,15 @@ provider:
   environment: ${file(environment.yml)}
   iam:
     role: DefaultRole
+  ecr: ${file(src/api/handlers/images.yml)}
 
 functions:
-  - ${file(functions.yml)}
+  - ${file(src/api/handlers/functions.yml)}
 
 resources:
   - ${file(resources.yml)}
 
-plugins:
-  - serverless-python-requirements
-
 custom:
-  pythonRequirements:
-    dockerizePip: true
   customersTableArn:
     Fn::GetAtt:
       - CustomersTable

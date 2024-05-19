@@ -68,4 +68,3 @@ Resources:
                   - dynamodb:DeleteItem
                 Resource:
                   - ${file(serverless.yml):provider.environment.CUSTOMERS_DYNAMODB_TABLE_ARN}
-                  - ${file(serverless.yml):provider.environment.CUSTOMERS_DYNAMODB_TABLE_ARN}/index/*
