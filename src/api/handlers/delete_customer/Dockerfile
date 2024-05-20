@@ -2,7 +2,6 @@ ARG FUNCTION_DIR="/function"
 
 FROM python:3.9-slim as build-image
 
-
 RUN apt-get update && \
     apt-get install -y \
     g++ \
@@ -35,7 +34,7 @@ COPY --from=build-image ${FUNCTION_DIR} ${FUNCTION_DIR}
 
 RUN pip install \
         --target ${FUNCTION_DIR} \
-        -r handlers/delete_customer/requirements.txt
+        -r src/api/handlers/delete_customer/requirements.txt
 
 ENTRYPOINT [ "/usr/local/bin/python", "-m", "awslambdaric" ]
-CMD [ "handlers/delete_customer/delete_customer_handler.handler" ]
+CMD [ "src/api/handlers/delete_customer/delete_customer_handler.handler" ]

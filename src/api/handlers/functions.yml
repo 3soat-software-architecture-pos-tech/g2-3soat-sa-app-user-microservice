@@ -7,39 +7,57 @@ addCustomer:
     - http:
         path: customers
         method: post
-        cor: true
+        cors: true
 
-#findAllCustomers:
-#  handler: src/api/handlers/find_all_customers_handler.handler
-#  events:
-#    - http:
-#        path: customers
-#        method: get
-#
-#findCustomerById:
-#  handler: src/api/handlers/find_customer_by_id_handler.handler
-#  events:
-#    - http:
-#        path: customers/{id}
-#        method: get
-#
-#findCustomerByCPF:
-#  handler: src/api/handlers/find_customer_by_cpf_handler.handler
-#  events:
-#    - http:
-#        path: customers/cpf/{cpf}
-#        method: get
-#
-#deleteCustomerById:
-#  handler: src/api/handlers/delete_customer_handler.handler
-#  events:
-#    - http:
-#        path: customers/{id}
-#        method: delete
-#
-#updateCustomerById:
-#  handler: src/api/handlers/update_customer_handler.handler
-#  events:
-#    - http:
-#        path: customers/{id}
-#        method: put
+deleteCustomerById:
+  image: delete-customer-image
+  memorySize: 256
+  timeout: 20
+  maximumRetryAttempts: 0
+  events:
+    - http:
+        path: customers/{id}
+        method: delete
+
+findAllCustomers:
+  image: find-all-customers-image
+  memorySize: 256
+  timeout: 20
+  maximumRetryAttempts: 0
+  events:
+    - http:
+        path: customers
+        method: get
+
+findCustomerByCPF:
+  image: find-customer-by-cpf-image
+  memorySize: 256
+  timeout: 20
+  maximumRetryAttempts: 0
+  events:
+    - http:
+        path: customers/cpf/{cpf}
+        method: get
+
+findCustomerById:
+  image: find-customer-by-id-image
+  memorySize: 256
+  timeout: 20
+  maximumRetryAttempts: 0
+  events:
+    - http:
+        path: customers/{id}
+        method: get
+
+updateCustomerById:
+  image: update-customer-image
+  memorySize: 256
+  timeout: 20
+  maximumRetryAttempts: 0
+  events:
+    - http:
+        path: customers/{id}
+        method: put
+
+
+

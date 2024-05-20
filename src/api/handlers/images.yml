@@ -4,22 +4,22 @@ images:
     path: ./
     file: src/api/handlers/add_customer/Dockerfile
 
-#  delete-customer-image:
-#    path: ./
-#    file: src/api/handlers/delete_customer/Dockerfile
-#
-#  find-all-customers-image:
-#    path: ./
-#    file: src/api/handlers/find_all_customers/Dockerfile
-#  
-#  find-customer-by-cpf-image:
-#    path: ./
-#    file: src/api/handlers/find_customer_by_cpf/Dockerfile
-#  
-#  find-customer-by-id-image:
-#    path: ./
-#    file: src/api/handlers/find_customer_by_id/Dockerfile
-#  
-#  update-customer-image:
-#    path: ./
-#    file: src/api/handlers/update_customer/Dockerfile
+  delete-customer-image:
+    path: ./
+    file: src/api/handlers/delete_customer/Dockerfile
+
+  find-all-customers-image:
+    path: ./
+    file: src/api/handlers/find_all_customers/Dockerfile
+  
+  find-customer-by-cpf-image:
+    path: ./
+    file: src/api/handlers/find_customer_by_cpf/Dockerfile
+  
+  find-customer-by-id-image:
+    path: ./
+    file: src/api/handlers/find_customer_by_id/Dockerfile
+  
+  update-customer-image:
+    path: ./
+    file: src/api/handlers/update_customer/Dockerfile

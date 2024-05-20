@@ -33,7 +33,7 @@ COPY --from=build-image ${FUNCTION_DIR} ${FUNCTION_DIR}
 
 RUN pip install \
         --target ${FUNCTION_DIR} \
-        -r handlers/find_all_customers/requirements.txt
+        -r src/api/handlers/find_all_customers/requirements.txt
 
 ENTRYPOINT [ "/usr/local/bin/python", "-m", "awslambdaric" ]
-CMD [ "handlers/find_all_customers/find_all_customers_handler.handler" ]
+CMD [ "src/api/handlers/find_all_customers/find_all_customers_handler.handler" ]
