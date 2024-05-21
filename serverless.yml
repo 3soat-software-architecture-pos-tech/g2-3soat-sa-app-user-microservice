@@ -1,0 +1,35 @@
+service: customer-service
+
+provider:
+  name: aws
+  runtime: python3.9
+  stage: ${opt:stage, "dev"}
+  region: us-east-1
+  environment: ${file(environment.yml)}
+  iam:
+    role: DefaultRole
+  ecr: ${file(src/api/handlers/images.yml)}
+
+functions:
+  - ${file(src/api/handlers/functions.yml)}
+
+resources:
+  - ${file(resources.yml)}
+
+custom:
+  customersTableArn:
+    Fn::GetAtt:
+      - CustomersTable
+      - Arn
+
+package:
+  patterns:
+    - '!.git/**'
+    - '!.github/**'
+    - '!.ipynb_checkpoints/**'
+    - '!services/*.ipynb'
+    - '!.pytest_cache/**'
+    - '!.vscode/**'
+    - '!node_modules/**'
+    - '!package.json'
+    - '!package-lock.json'
