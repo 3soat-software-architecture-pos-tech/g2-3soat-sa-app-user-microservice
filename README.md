@@ -2,7 +2,10 @@
 
 Este é um microserviço de usuários (Customers) construído com Python e Serverless Framework. Ele fornece operações CRUD (Create, Read, Update, Delete) para manipulação de usuários, com persistência de dados no DynamoDB.
 
-### Descrição do Projeto
+![Captura de tela 2024-05-20 231250](https://github.com/3soat-software-architecture-pos-tech/g2-3soat-sa-app-user-microservice/assets/27281151/ec17e5b4-0a68-410e-865a-ace82b99862c)
+
+
+## Descrição do Projeto
 
 Este projeto consiste em um microserviço para gerenciamento de usuários. Ele fornece endpoints para adicionar, atualizar, buscar e excluir usuários. Os dados dos usuários são armazenados no DynamoDB.
 
@@ -19,7 +22,7 @@ Este projeto consiste em um microserviço para gerenciamento de usuários. Ele f
 - **serverless.yml**: Arquivo de configuração do Serverless Framework para definir a infraestrutura e os recursos AWS.
 - **requirements.txt**:
 
-### Testes Unitários
+## Testes Unitários
 
 Para executar os testes unitários, siga estas etapas:
 
@@ -46,3 +49,25 @@ Para implantar o projeto na AWS usando o Serverless Framework e Docker, siga est
 ```shell
 sls deploy
 ```
+
+## Materias de Referência
+- Alura: [Node js testes unitários e de integração](https://cursos.alura.com.br/course/nodejs-testes-unitarios-integracao)
+- Alura: [Node js API Rest com Express e MongoDB](https://cursos.alura.com.br/course/nodejs-api-rest-express-mongodb)
+- Alura: [O que é Behavior-Driven Development (BDD)](https://cursos.alura.com.br/extra/alura-mais/o-que-e-behavior-driven-development-bdd--c284)
+- Jest: [Documentation](https://jestjs.io/)
+- ESLint : [Documentation](https://pt-br.eslint.org/)
+- Sonar Cloud: [Documentation](https://docs.sonarsource.com/sonarcloud/)
+
+## Team
+ - Turma: 3SOAT
+ - Grupo: 2
+
+   [André Felipe](andrefelipegodoi@gmail.com)
+   
+   [Bruna Carlota](brunacarlota@gmail.com)
+
+   [Carlos Tofoli](henrique.tofoli@hotmail.com)
+
+   [Guilherme Oliveira](guilherme.oliveira182@yahoo.com.br)
+
+   [Valdeir Jesus](valdeir_014@hotmail.com)
