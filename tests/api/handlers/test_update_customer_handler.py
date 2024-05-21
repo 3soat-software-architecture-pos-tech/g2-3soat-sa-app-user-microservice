@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', 'src')))
+
 import json
 import pytest
 from src.api.handlers.update_customer.update_customer_handler import update_customer_handler
